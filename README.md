@@ -22,6 +22,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
     ```<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">```
 
+## Hitos a recordar
+
+Para crear un modulo en el que importar (y exportar) todos los modulos de Material a utilizar (para luego hacer un unico import en el app.module) utilizamos: ``` ng g m material --flat ```
+Al hacer esto, se creará un module en la misma carpeta que está el app.module, por tanto, a partir de ese momento, cuando se cree un componente mediante CLI vamos a tener que especificar en que modulo queremos que lo importe con --module, por ej. :  ````ng g c components/mapa --module=app````
+
+## Instalación de Angular Google Maps
+
+```npm install @agm/core --save```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
