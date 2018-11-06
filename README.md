@@ -1,6 +1,26 @@
-# Googlemaps
+# Googlemaps Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+
+## Instalación angular material design
+
+- Instalación básica
+
+    ```npm install --save @angular/material @angular/cdk @angular/animations hammerjs```
+
+    Nota: ```hammerjs``` no es obligatorio, es para manejar los gestos para algunos componentes como mat-slider, etc... Si se "instala", luego habría que importarlo en el ```src/main.ts```
+
+- Añadir el BrowserAnimationsModule los import del app.module, previa importación de:
+
+    ```import {BrowserAnimationsModule} from '@angular/platform-browser/animations';```
+
+- E importar los estilos (vease https://material.angular.io/guide/theming#using-a-pre-built-theme), poniendo en el styles.css la siguiente linea:
+
+    ```@import "~@angular/material/prebuilt-themes/indigo-pink.css";```
+
+- Si quisieramos añadir iconos de Material, añadiríamos en el index.html:
+
+    ```<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">```
 
 ## Development server
 
