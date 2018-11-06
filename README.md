@@ -31,6 +31,10 @@ Al hacer esto, se creará un module en la misma carpeta que está el app.module,
 
 ```npm install @agm/core --save```
 
+https://angular-maps.com/
+https://angular-maps.com/api-docs/agm-core/components/agminfowindow
+https://angular-maps.com/api-docs/agm-core/components/agmmap
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
