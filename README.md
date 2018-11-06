@@ -27,6 +27,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Para crear un modulo en el que importar (y exportar) todos los modulos de Material a utilizar (para luego hacer un unico import en el app.module) utilizamos: ``` ng g m material --flat ```
 Al hacer esto, se creará un module en la misma carpeta que está el app.module, por tanto, a partir de ese momento, cuando se cree un componente mediante CLI vamos a tener que especificar en que modulo queremos que lo importe con --module, por ej. :  ````ng g c components/mapa --module=app````
 
+RECORDAR: Para poder utilizar el servicio de google maps, recordera que hay que poner la key en el app.module ( https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key ) 
+
+```
+AgmCoreModule.forRoot({
+      apiKey: 'YOUR_KEY'  
+})
+```
+
 ## Instalación de Angular Google Maps
 
 ```npm install @agm/core --save```
