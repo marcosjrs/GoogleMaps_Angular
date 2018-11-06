@@ -10,7 +10,7 @@
          <p>{{marcador.desc}}</p>
          <div>
            <button mat-raised-button color="primary">Editar</button>
-           <button mat-raised-button color="warn">Borrar</button>
+           <button mat-raised-button color="warn" (click)="borrarMarcador(marcador)">Borrar</button>
           </div>
         </agm-info-window>
       </agm-marker>
