@@ -1,0 +1,10 @@
+<mat-form-field>
+  <input matInput [(ngModel)]="data.titulo" placeholder="Título">
+</mat-form-field>
+<mat-form-field>
+  <input matInput [(ngModel)]="data.desc" placeholder="Descripción">
+</mat-form-field>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="guardar()" color="primary" cdkFocusInitial>Guardar</button>
+  <button mat-raised-button (click)="onNoClick()" color="warn">Cancelar</button>
+</div>

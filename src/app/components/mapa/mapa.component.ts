@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Marcador } from 'src/app/models/marcador';
 import { MatSnackBar } from '@angular/material'
+import {MatDialog} from '@angular/material';
+import { DialogoInfoMarcadorComponent } from '../dialogo-info-marcador/dialogo-info-marcador.component';
 
 @Component({
   selector: 'app-mapa',
@@ -12,7 +14,7 @@ export class MapaComponent implements OnInit {
   latMapa: number = 43.38596317684374;
   lngMapa: number = -8.4065151;
 
-  constructor(public snackBar: MatSnackBar) {    
+  constructor(public snackBar: MatSnackBar, public dialog: MatDialog) {    
     this.marcadores = this.recuperarMarcadores();
     if(this.marcadores.length>0){
       this.openSnackBar("Se han recuperado antiguos marcadores", "Cerrar");
@@ -33,6 +35,27 @@ export class MapaComponent implements OnInit {
     this.persistirMarcadores();
     this.openSnackBar("Marcador Eliminado", "Cerrar");
   }
+
+  editarMarcador(marcador:Marcador){
+
+    const dialogRef = this.dialog.open(DialogoInfoMarcadorComponent, {
+      width: '250px',
+      data: { 
+        titulo: marcador.titulo , desc: marcador.desc
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {   
+      if(result) {
+        marcador.titulo = result.titulo;
+        marcador.desc = result.desc;
+        this.openSnackBar("Marcador Editado", "Cerrar");
+      }       
+      this.persistirMarcadores();     
+    });
+    
+  }
+
 
   persistirMarcadores(){
     localStorage.setItem('marcadores',JSON.stringify(this.marcadores));
