@@ -5,6 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { MapaComponent } from './components/mapa/mapa.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,10 @@ import { MapaComponent } from './components/mapa/mapa.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'YOUR_KEY' //https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
